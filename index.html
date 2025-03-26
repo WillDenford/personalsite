@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Site</title>
+</head>
+<body>
+    <header>
+        <h1>&#128075; Welcome Will</h1>
+        <p>The weather in your location is </p>
+        <div id="temperature">Loading temperature...</div>
+    </header>
+</body>
+<script>
+    <!-- https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m -->
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=-27.53&longitude=153.03&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Australia%2FSydney').then(function (response) {
+	// The API call was successful!
+    	//console.log('success!', response);
+        response.json().then((json) => {
+           console.log(json.current.temperature_2m)
+           document.getElementById('temperature').innerHTML = `Temperature: ${json.current.temperature_2m} degrees`;
+
+        }) 
+    }).catch(function (err) {
+	// There was an error
+	    console.warn('Something went wrong.', err);
+    });
+</script>
+</html>
