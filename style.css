@@ -1,0 +1,14 @@
+/*  #274060, #335C81, #65AFFF, #1B2845, #5899E2 */
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #5899E2;
+    border-radius: 16px;
+    box-shadow: 5px 10px #274060;
+}
+

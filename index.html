@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Site</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -11,6 +12,19 @@
         <p>The weather in your location is </p>
         <div id="temperature">Loading temperature...</div>
     </header>
+    <br><br>
+    <div class="form">
+        <form action="mailto:willdenford.dev@gmail.com" method="post" enctype="text/plain">
+            Name:<br>
+            <input type="text" name="name"><br>
+            E-mail:<br>
+            <input type="text" name="mail"><br>
+            Comment:<br>
+            <input type="text" name="comment"><br><br>
+            <input type="submit" value="Send">
+            <input type="reset" value="Reset">
+            </form>
+    </div>
 </body>
 <script>
     <!-- https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m -->
@@ -26,5 +40,10 @@
 	// There was an error
 	    console.warn('Something went wrong.', err);
     });
+</script>
+<script>
+    const showAlert = () => {
+        alert("Hello! I am an alert box!!");
+    }
 </script>
 </html>
